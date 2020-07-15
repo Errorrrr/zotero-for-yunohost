@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="source"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/jna.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.0.2.jar"/>
+    <classpathentry kind="lib" path="lib/libreoffice-sdk/commonwizards.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/form.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/query.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/report.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/ScriptFramework.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/ScriptProviderForJava.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/table.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/unoil.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/xmerge.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/XMergeBridge.jar"/>
+    <classpathentry kind="lib" path="lib/libreoffice-sdk/java_uno.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/juh.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/jurt.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/ridl.jar"/>
+	<classpathentry kind="lib" path="lib/libreoffice-sdk/unoloader.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+app=dockercontainer
+
+# Remove Docker container and systemd service but keep the pulled image and Docker
+
+	sudo docker stop docker_app-zotero_1
+	sudo docker rm docker_app-zotero_1
+
+
+        sudo docker stop docker_app-zotero-phpmyadmin_1
+        sudo docker rm docker_app-zotero-phpmyadmin_1
+
+
+        sudo docker stop docker_db-zotero-localstack_1
+        sudo docker rm docker_db-zotero-localstack_1
+
+
+        sudo docker stop docker_db-zotero-minio_1
+        sudo docker rm docker_db-zotero-minio_1
+
+
+        sudo docker stop docker_db-zotero-redis_1
+        sudo docker rm docker_db-zotero-redis_1
+
+
+        sudo docker stop docker_db-zotero-mysql_1
+        sudo docker rm docker_db-zotero-mysql_1
+
+
+        sudo docker stop docker_db-zotero-memcached_1
+        sudo docker rm docker_db-zotero-memcached_1
+
+
+# Reload
+	sudo service nginx reload

@@ -1,0 +1,5 @@
+build/zoteroWinWordIntegration/.vs
+build/zoteroWinWordIntegration/Release
+build/zoteroWinWordIntegration/Debug
+build/zoteroWinWordIntegration/x64
+*.vcxproj.user

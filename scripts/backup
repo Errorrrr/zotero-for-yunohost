@@ -1,0 +1,16 @@
+#!/bin/bash
+
+app=dockercontainer
+name=docker_app-zotero_1
+# The parameter $1 is the backup directory location which will be compressed afterward
+	backup_dir=/home/apps/container-$name
+	sudo mkdir -p $backup_dir
+
+# Backup container's volumes
+		echo 'Backing up with data container'
+		sudo docker stop $name
+		sudo docker stop $name-data
+		sudo docker run --rm --volumes-from $name-data -v $backup_dir:/backup $repository tar cvf /backup/container-$name.tar
+
+# Copy YunoHost parameters
+	sudo cp -a /etc/yunohost/apps/$app/. $backup_dir/yunohost

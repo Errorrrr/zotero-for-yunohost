@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!--
+    ***** BEGIN LICENSE BLOCK *****
+    
+    Copyright © 2006–2013 Center for History and New Media
+                     George Mason University, Fairfax, Virginia, USA
+                     http://zotero.org
+    
+    This file is part of Zotero.
+    
+    Zotero is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    Zotero is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+    
+    You should have received a copy of the GNU Affero General Public License
+    along with Zotero.  If not, see <http://www.gnu.org/licenses/>.
+    
+    ***** END LICENSE BLOCK *****
+-->
+<!DOCTYPE prefwindow SYSTEM "chrome://zotero/locale/preferences.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane id="zotero-prefpane-general"
+			onpaneload="Zotero_Preferences.General.init()"
+			helpTopic="general">
+		
+		<preferences id="zotero-prefpane-general-preferences">
+			<preference id="pref-fontSize" name="extensions.zotero.fontSize" type="string"/>
+			<preference id="pref-layout" name="extensions.zotero.layout" type="string"/>
+			
+			<preference id="pref-automaticSnapshots" name="extensions.zotero.automaticSnapshots" type="bool"/>
+			<preference id="pref-downloadAssociatedFiles" name="extensions.zotero.downloadAssociatedFiles" type="bool"/>
+			<preference id="pref-autoRecognizeFiles" name="extensions.zotero.autoRecognizeFiles" type="bool"/>
+			<preference id="pref-autoRenameFiles" name="extensions.zotero.autoRenameFiles" type="bool"/>
+			
+			<preference id="pref-automaticTags" name="extensions.zotero.automaticTags" type="bool"/>
+			<preference id="pref-trashAutoEmptyDays" name="extensions.zotero.trashAutoEmptyDays" type="int"/>
+			
+			<preference id="pref-groups-copyChildNotes" name="extensions.zotero.groups.copyChildNotes" type="bool"/>
+			<preference id="pref-groups-copyChildFileAttachments" name="extensions.zotero.groups.copyChildFileAttachments" type="bool"/>
+			<preference id="pref-groups-copyChildLinks" name="extensions.zotero.groups.copyChildLinks" type="bool"/>
+			<preference id="pref-groups-copyTags" name="extensions.zotero.groups.copyTags" type="bool"/>
+			
+		</preferences>
+		
+		<groupbox id="zotero-prefpane-general-groupbox">
+			<caption label="&zotero.preferences.userInterface;"/>
+			
+			<grid id="zotero-prefpane-general-grid">
+				<columns>
+					<column/>
+					<column flex="1"/>
+				</columns>
+			
+				<rows id="zotero-prefpane-general-rows">
+					<row>
+						<hbox align="center">
+							<label value="&zotero.preferences.layout;" control="layout"/>
+						</hbox>
+						<radiogroup id="layout" orient="horizontal" align="center" preference="pref-layout">
+							<radio id="horizontal" label="&zotero.preferences.layout.standard;" value="standard"/>
+							<radio id="vertical" label="&zotero.preferences.layout.stacked;" value="stacked"/>
+						</radiogroup>
+					</row>
+
+					<row>
+						<hbox align="center">
+							<label value="&zotero.preferences.fontSize;" control="fontSize"/>
+						</hbox>
+						<radiogroup id="fontSize" orient="horizontal" align="center" preference="pref-fontSize">
+							<radio id="fontSize1" label="&zotero.preferences.fontSize.small;" value="1.0"/>
+							<radio id="fontSize2" label="&zotero.preferences.fontSize.medium;" value="1.15"/>
+							<radio id="fontSize3" label="&zotero.preferences.fontSize.large;" value="1.3"/>
+							<radio id="fontSize4" label="&zotero.preferences.fontSize.xlarge;" value="1.5"/>
+						</radiogroup>
+					</row>
+					
+					<row>
+						<hbox align="center">
+							<label value="&zotero.preferences.fontSize.notes;" control="noteFontSize"/>
+						</hbox>
+						<hbox>
+							<menulist id="noteFontSize" editable="true"
+									onblur="Zotero.Prefs.set('note.fontSize', this.value); this.value = Zotero.Prefs.get('note.fontSize');">
+								<menupopup>
+									<menuitem label="11"/>
+									<menuitem label="12"/>
+									<menuitem label="13"/>
+									<menuitem label="14"/>
+									<menuitem label="18"/>
+									<menuitem label="24"/>
+									<menuitem label="36"/>
+									<menuitem label="48"/>
+									<menuitem label="64"/>
+									<menuitem label="72"/>
+									<menuitem label="96"/>
+								</menupopup>
+							</menulist>
+							
+							<label class="statusLine" value="&zotero.preferences.keys.changesTakeEffect;"/>
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		
+		<groupbox id="zotero-prefpane-file-handling-groupbox">
+			<caption label="&zotero.preferences.fileHandling;"/>
+			
+			<checkbox id="automaticSnapshots-checkbox"
+				label="&zotero.preferences.automaticSnapshots;"
+				preference="pref-automaticSnapshots"/>
+			<checkbox label="&zotero.preferences.downloadAssociatedFiles;" preference="pref-downloadAssociatedFiles"/>
+			<checkbox label="&zotero.preferences.autoRecognizeFiles;" preference="pref-autoRecognizeFiles"/>
+			<checkbox label="&zotero.preferences.autoRenameFiles;" preference="pref-autoRenameFiles"/>
+			
+			<hbox align="center">
+				<label value="&zotero.preferences.fileHandler.openPDFsUsing;" control="file-handler-pdf"/>
+				<menulist id="fileHandler-pdf" class="fileHandler-menu">
+					<menupopup>
+						<menuitem id="fileHandler-custom"/>
+						<menuitem label="&zotero.preferences.fileHandler.systemDefault;"
+								oncommand="Zotero_Preferences.General.setFileHandler('pdf', false)"/>
+						<menuitem label="&zotero.preferences.custom;"
+								oncommand="Zotero_Preferences.General.chooseFileHandler('pdf')"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+		</groupbox>
+		
+		<groupbox id="zotero-prefpane-miscellaneous-groupbox">
+			<caption label="&zotero.preferences.miscellaneous;"/>
+			
+			<checkbox label="&zotero.preferences.automaticTags;" preference="pref-automaticTags"/>
+			<hbox align="center">
+				<label value="&zotero.preferences.trashAutoEmptyDaysPre;"/>
+				<textbox size="2" preference="pref-trashAutoEmptyDays"/>
+				<label value="&zotero.preferences.trashAutoEmptyDaysPost;"/>
+			</hbox>
+		</groupbox>
+		
+		<groupbox>
+			<caption label="&zotero.preferences.groups;"/>
+			
+			<label value="&zotero.preferences.groups.whenCopyingInclude;"/>
+			<vbox style="margin-left: 2em">
+				<checkbox label="&zotero.preferences.groups.childNotes;" preference="pref-groups-copyChildNotes"/>
+				<checkbox label="&zotero.preferences.groups.childFiles;" preference="pref-groups-copyChildFileAttachments"/>
+				<checkbox label="&zotero.preferences.groups.childLinks;" preference="pref-groups-copyChildLinks"/>
+				<checkbox label="&zotero.preferences.groups.tags;" preference="pref-groups-copyTags"/>
+			</vbox>
+		</groupbox>
+		
+		<separator/>
+		<separator/>
+	</prefpane>
+	
+	<script src="preferences_general.js" type="application/javascript;version=1.8"/>
+</overlay>

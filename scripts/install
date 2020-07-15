@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Retrieve arguments
+
+# Check container's ports availability - TBD
+#sudo yunohost app checkport 9000
+#if [[ ! $? -eq 0 ]]; then
+#  exit 1
+#fi
+
+# Install Docker if it is not installed yet
+if [ -f /usr/bin/docker ]; then
+	echo "Docker is already installed"
+else
+	echo "Docker will now be installed"
+	sudo apt-get install curl -y -qq
+	sudo curl -sSL https://get.docker.com/ | sh
+	sudo yunohost service add docker
+	sudo update-rc.d docker defaults
+	sudo service docker start
+	sudo usermod -aG docker admin
+	newgrp docker
+fi
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
+sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+
+sudo service docker restart
+
+
+
+#npm install
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+cd app/zotero-prime/docker
+sudo docker-compose up -d
+./bin/init.sh
+
+
+

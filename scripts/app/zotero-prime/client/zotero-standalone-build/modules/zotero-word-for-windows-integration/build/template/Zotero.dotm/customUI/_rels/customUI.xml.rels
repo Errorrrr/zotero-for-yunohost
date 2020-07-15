@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/setZoteroDocPrefs.png" Id="setZoteroDocPrefs"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/addEditZoteroBibliography.png" Id="addEditZoteroBibliography"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/addEditZoteroCitation-small.png" Id="addEditZoteroCitation-small"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/addEditZoteroBibliography-small.png" Id="addEditZoteroBibliography-small"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/setZoteroDocPrefs-small.png" Id="setZoteroDocPrefs-small"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/zotero-z-16.png" Id="zotero-z-16"/>
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="images/addEditZoteroCitation0.png" Id="addEditZoteroCitation"/>
+</Relationships>
