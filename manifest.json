@@ -1,12 +1,11 @@
 {
-    "name": "Docker Container",
-    "id": "dockercontainer",
+    "name": "Zotero",
+    "id": "zotero",
     "description": {
         "en": "Docker allows to deploy applications which have not yet been integrated with YunoHost",
-        "fr": "Docker permet de déployer des applications qui n'ont pas encore été intégrées à YunoHost"
     },
     "developer": {
-        "name": "scith"
+        "name": "danil"
     },
     "multi_instance": "true",
     "arguments":{}

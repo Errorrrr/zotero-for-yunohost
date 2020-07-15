@@ -1,6 +1,6 @@
 #!/bin/bash
 
-app=dockercontainer
+app=zotero
 name=docker_app-zotero_1
 
 	backup_dir=/home/apps/container-$name

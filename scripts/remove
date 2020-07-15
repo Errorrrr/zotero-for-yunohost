@@ -1,6 +1,6 @@
 #!/bin/bash
 
-app=dockercontainer
+app=zotero
 
 # Remove Docker container and systemd service but keep the pulled image and Docker
 
