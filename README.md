@@ -15,7 +15,9 @@ $ yunohost app install $dir
 | Zotero API    | http://localhost:8080                         |
 | S3 Web UI     | http://localhost:8082                         |
 | PHPMyAdmin    | http://localhost:8083                         |
+
 По умолчанию, доступ к этим сервисам можно получить, используя эти данные:
+
 | Название          | Логин                    | Пароль           |
 | ------------- | ------------------------ | ------------------ |
 | Zotero API    | admin                    | admin              |
